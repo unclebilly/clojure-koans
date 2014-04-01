@@ -18,7 +18,10 @@
       (recur (dec n) (conj acc (nth coll n))))))
 
 (defn factorial [n]
-  __)
+  (loop [cnt n acc 1]
+    (if (zero? cnt)
+      acc
+      (recur (dec cnt) (* acc cnt)))))
 
 (meditations
   "Recursion ends with a base case"
